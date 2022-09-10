@@ -15,7 +15,7 @@
       <None Update="tessdata\eng.traineddata">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="tessdata\index.jpg">
+      <None Update="tessdata\index.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
