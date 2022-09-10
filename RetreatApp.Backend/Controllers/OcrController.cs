@@ -1,5 +1,6 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Tesseract;
+using TesseractOCR;
 
 namespace RetreatAppApi.Controllers;
 
@@ -7,13 +8,17 @@ namespace RetreatAppApi.Controllers;
 [Route("[controller]")]
 public class OcrController : ControllerBase
 {
-	[HttpGet]
-	public string Get()
-	{
-		using var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default);
-		using var image = Pix.LoadFromFile(@"./tessdata/index.png");
-		var page = engine.Process(image);
+    [HttpGet]
+    public object Get()
+    {
+        using var engine = new Engine(@"./tessdata", TesseractOCR.Enums.Language.Czech, TesseractOCR.Enums.EngineMode.Default);
+        using var image = TesseractOCR.Pix.Image.LoadFromFile(@"./tessdata/index.jpg");
+        var page = engine.Process(image);
 
-		return page.GetMeanConfidence() + ":" +  page.GetText();
-	}
+        return new
+        {
+            page.MeanConfidence,
+            page.Text
+        };
+    }
 }

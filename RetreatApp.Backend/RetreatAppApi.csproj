@@ -8,11 +8,14 @@
 
     <ItemGroup>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-        <PackageReference Include="Tesseract" Version="4.1.1" />
+        <PackageReference Include="TesseractOCR" Version="5.2.11" />
     </ItemGroup>
 
     <ItemGroup>
       <None Update="tessdata\eng.traineddata">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="tessdata\ces.traineddata">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="tessdata\index.jpg">
