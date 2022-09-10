@@ -137,7 +137,10 @@ function App() {
           >
             <div className="flex flex-col items-center h-full">
               <p className="text-white font-bold text-2xl mb-4">
-                Porovnání obrázků dokončeno 
+                Porovnání obrázků dokončeno -{" "}
+                {(message?.diffs.length ?? 0) > 0
+                  ? `nalezeno ${message?.diffs.length} rozdílů`
+                  : "nenalezen rozdíl"}
               </p>
               <div className="space-y-4 max-w-7xl mx-auto w-full">
                 {message?.diffs.length === 0 && (
