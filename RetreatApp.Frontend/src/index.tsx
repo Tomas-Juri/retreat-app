@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.css";
+import { Flowbite } from "flowbite-react";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -9,7 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Flowbite>
+      <App />
+    </Flowbite>
   </React.StrictMode>
 );
 
