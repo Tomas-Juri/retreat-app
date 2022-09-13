@@ -53,9 +53,11 @@ function App() {
 
   return (
     <div className="h-screen flex flex-col">
+      <header></header>
       <main className="px-4 py-10 bg-gray-900 flex flex-col items-center justify-center flex-grow">
         <div className="h-full flex flex-col gap-4 flex-grow items-center justify-center py-4">
           <Transition
+            appear 
             show={state === "Initial"}
             enter="transition duration-500"
             enterFrom="opacity-0 translate-y-[200%]"
@@ -291,7 +293,7 @@ function App() {
                     </table>
                   </div>
                 </div>
-                <div className="w-full">
+                <div className="fixed bottom-4 right-4">
                   <button
                     className="block bg-blue-500 text-white font-medium px-8 py-3 rounded-lg w-full disabled:bg-blue-900 disabled:text-gray-600 shadow-lg shadow-blue-500/20"
                     onClick={() => {
